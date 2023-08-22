@@ -21,7 +21,7 @@ Where:
 The $`\tanh`$ component of TraHA ensures outputs are bounded and zero-centered. This is particularly advantageous for recurrent architectures like GRUs, mitigating potential instabilities.
 
 ### 2. **Non-saturating Region for Positive Inputs** 🌌:
-With its `ReLU` segment, TraHA promises non-saturation for $`\( x > 0 )`$, confronting the vanishing gradient challenge often seen in deep networks.
+With its `ReLU` segment, TraHA promises non-saturation for $`( x > 0 )`$, confronting the vanishing gradient challenge often seen in deep networks.
 
 ### 3. **Parameterized Flexibility** 🎛:
 The dials $`\alpha`$ and $`\beta`$ facilitate fine-tuning, striking a balance between the `tanh` and `ReLU` dynamics tailored for specific tasks.
