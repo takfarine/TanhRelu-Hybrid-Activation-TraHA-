@@ -2,11 +2,11 @@
 
 ## 🚀 Introduction
 
-Activation functions, typically denoted as \( f(x) \), play a pivotal role in neural networks. They breathe non-linearity between layers, letting the network fathom intricate patterns in the data. While `tanh` and `ReLU` have been mainstream choices, each comes with its pros and cons. **TanhRelu Hybrid Activation (TraHA)** merges the strengths of both these functions.
+Activation functions, typically denoted as \( f(x) \), are pivotal in neural networks. They inject non-linearity between layers, empowering the network to unravel intricate patterns in the data. `tanh` and `ReLU` have historically been mainstream choices, each boasting its set of pros and cons. **TanhRelu Hybrid Activation (TraHA)** seamlessly merges the virtues of both functions and presents itself as a promising candidate, especially for architectures like the GRU.
 
 ## 📐 Mathematical Definition
 
-For an input \( x \) to the activation function, TraHA is articulated as:
+For an input \( x \) into the activation function, TraHA is defined as:
 
 \[ 
 f(x) = \alpha \times \tanh(x) + \beta \times \max(0, x) 
@@ -14,29 +14,29 @@ f(x) = \alpha \times \tanh(x) + \beta \times \max(0, x)
 
 Where:
 - \( \alpha \) and \( \beta \) are scalar hyperparameters.
-- \( \tanh \) is the hyperbolic tangent function, confining outputs within \([-1, 1]\).
-- \( \max(0, x) \) signifies the ReLU component, giving life to non-linearity for positive inputs.
+- \( \tanh \) is the hyperbolic tangent function, bounding outputs within \([-1, 1]\).
+- \( \max(0, x) \) signifies the ReLU component, introducing non-linearity for positive inputs.
 
 ## 💡 Rationale Behind TraHA
 
 ### 1. **Bounded & Zero-centered Output** 🔒:
-The \( \tanh \) facet of TraHA ensures the output remains bounded in \([-1, 1]\) and is zero-centered, a blessing for recurrent architectures.
+The \( \tanh \) component of TraHA ensures outputs are bounded and zero-centered. This is particularly advantageous for recurrent architectures like GRUs, mitigating potential instabilities.
 
 ### 2. **Non-saturating Region for Positive Inputs** 🌌:
-Thanks to its `ReLU` component, TraHA ensures non-saturation for \( x > 0 \), addressing the vanishing gradient conundrum in deep networks.
+With its `ReLU` segment, TraHA promises non-saturation for \( x > 0 \), confronting the vanishing gradient challenge often seen in deep networks.
 
 ### 3. **Parameterized Flexibility** 🎛:
-The knobs \( \alpha \) and \( \beta \) offer a tuning mechanism, allowing an optimal balance between the `tanh` and `ReLU` dynamics.
+The dials \( \alpha \) and \( \beta \) facilitate fine-tuning, striking a balance between the `tanh` and `ReLU` dynamics tailored for specific tasks.
 
 ## 🌐 Potential Use Cases
 
-- **Deep Neural Networks (DNNs)** 🌲: A beacon for deeper architectures, ensuring gradient vitality.
-  
-- **Recurrent Neural Networks (RNNs)** 🔄: Harnessing the zero-centered trait for stabilized RNN dynamics.
+- **Deep Neural Networks (DNNs)** 🌲: An ideal fit for deeper architectures, nourishing gradient flow.
 
-- **Generative Models** 🎨: A balance between gradient vivacity and bounded outputs for stable training epochs.
+- **Gated Recurrent Units (GRUs)** 🔁: By replacing the traditional `tanh` in GRUs with TraHA, one might achieve better convergence and stability, especially in long sequences.
+
+- **Generative Models** 🎨: A harmonious balance between robust gradient dynamics and bounded outputs ensures stable epochs.
 
 ## 🖋 Conclusion
 
-TanhRelu Hybrid Activation (TraHA) is a breath of fresh air in the world of neural activations, wedding the virtues of two prevalent functions. While the theoretical foundation stands tall, the real litmus test lies in empirical adventures across datasets and tasks.
+TanhRelu Hybrid Activation (TraHA) offers a refreshing perspective in the realm of neural activations. Blending the strengths of two dominant functions, its application, especially in GRUs, could be a game-changer. While its theoretical pillars are robust, the ultimate validation will be its empirical performance across diverse datasets and tasks.
 
