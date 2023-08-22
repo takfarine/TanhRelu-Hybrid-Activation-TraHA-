@@ -15,6 +15,17 @@ Where:
 - $`\tanh`$ is the hyperbolic tangent function, bounding outputs within $`([-1, 1])`$.
 - $`\max(0, x)`$ signifies the ReLU component, introducing non-linearity for positive inputs.
 
+## 💡 Rationale Behind TraHA
+
+### 1. **Bounded & Zero-centered Output** 🔒:
+The $`\tanh`$ component of TraHA ensures outputs are bounded and zero-centered. This is particularly advantageous for recurrent architectures like GRUs, mitigating potential instabilities.
+
+### 2. **Non-saturating Region for Positive Inputs** 🌌:
+With its `ReLU` segment, TraHA promises non-saturation for $`( x > 0 )`$, confronting the vanishing gradient challenge often seen in deep networks.
+
+### 3. **Parameterized Flexibility** 🎛:
+The dials $`\alpha`$ and $`\beta`$ facilitate fine-tuning, striking a balance between the `tanh` and `ReLU` dynamics tailored for specific tasks.
+
 ### 📖 Role of Scalars
 
 - **α**: Scales the tanh component, adjusting its amplitude and steepness.
@@ -39,18 +50,6 @@ By analyzing α and β, you can discern which component (tanh or ReLU) the netwo
 ---
 
 **Note**: Always validate empirically for best results on your specific task.
-
-
-## 💡 Rationale Behind TraHA
-
-### 1. **Bounded & Zero-centered Output** 🔒:
-The $`\tanh`$ component of TraHA ensures outputs are bounded and zero-centered. This is particularly advantageous for recurrent architectures like GRUs, mitigating potential instabilities.
-
-### 2. **Non-saturating Region for Positive Inputs** 🌌:
-With its `ReLU` segment, TraHA promises non-saturation for $`( x > 0 )`$, confronting the vanishing gradient challenge often seen in deep networks.
-
-### 3. **Parameterized Flexibility** 🎛:
-The dials $`\alpha`$ and $`\beta`$ facilitate fine-tuning, striking a balance between the `tanh` and `ReLU` dynamics tailored for specific tasks.
 
 ## 🌐 Potential Use Cases
 
