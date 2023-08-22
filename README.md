@@ -62,7 +62,7 @@ class SimpleNN(nn.Module):
     def __init__(self):
         super(SimpleNN, self).__init__()
         self.fc1 = nn.Linear(784, 128)
-        self.traha = TraHA(alpha=1.0, beta=1.0)
+        self.traha = traha(alpha=1.0, beta=1.0)
         self.fc2 = nn.Linear(128, 10)
 
     def forward(self, x):
