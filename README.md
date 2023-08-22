@@ -11,9 +11,9 @@ For an input $`x`$ into the activation function, TraHA is defined as:
 $`[f(x) = \alpha \times \tanh(x) + \beta \times \max(0, x)]`$
 
 Where:
--  $`\alpha`$ and $`\beta`$ are scalar hyperparameters.
-- \( \tanh \) is the hyperbolic tangent function, bounding outputs within \([-1, 1]\).
-- \( \max(0, x) \) signifies the ReLU component, introducing non-linearity for positive inputs.
+- $`\alpha`$ and $`\beta`$ are scalar hyperparameters.
+- $`\tanh`$ is the hyperbolic tangent function, bounding outputs within $`([-1, 1])`$.
+- $`\max(0, x)`$ signifies the ReLU component, introducing non-linearity for positive inputs.
 
 ## 💡 Rationale Behind TraHA
 
