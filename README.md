@@ -15,6 +15,32 @@ Where:
 - $`\tanh`$ is the hyperbolic tangent function, bounding outputs within $`([-1, 1])`$.
 - $`\max(0, x)`$ signifies the ReLU component, introducing non-linearity for positive inputs.
 
+### 📖 Role of Scalars
+
+- **α**: Scales the tanh component, adjusting its amplitude and steepness.
+- **β**: Scales the ReLU component, controlling its influence for positive inputs.
+
+### 🔧 Choosing Scalar Values
+
+- **Default**: Set both α and β to `1` for equal contribution.
+- **Prioritize tanh**: Increase α relative to β (e.g., α=1.5, β=0.5).
+- **Prioritize ReLU**: Increase β relative to α.
+
+### 🛠 Practical Considerations
+
+- **Training Dynamics**: α and β can influence convergence speed and gradient issues.
+- **Hyperparameter Search**: Optimal α and β can vary. Consider grid/random search.
+- **Regularization**: Monitor activations if using large α or β values.
+
+### 🧠 Interpretability
+
+By analyzing α and β, you can discern which component (tanh or ReLU) the network relies upon more.
+
+---
+
+**Note**: Always validate empirically for best results on your specific task.
+
+
 ## 💡 Rationale Behind TraHA
 
 ### 1. **Bounded & Zero-centered Output** 🔒:
