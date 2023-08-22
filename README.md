@@ -2,18 +2,18 @@
 
 ## 🚀 Introduction
 
-Activation functions, typically denoted as \( f(x) \), are pivotal in neural networks. They inject non-linearity between layers, empowering the network to unravel intricate patterns in the data. `tanh` and `ReLU` have historically been mainstream choices, each boasting its set of pros and cons. **TanhRelu Hybrid Activation (TraHA)** seamlessly merges the virtues of both functions and presents itself as a promising candidate, especially for architectures like the GRU.
+Activation functions, typically denoted as $`\( f(x) \)`$, are pivotal in neural networks. They inject non-linearity between layers, empowering the network to unravel intricate patterns in the data. `tanh` and `ReLU` have historically been mainstream choices, each boasting its set of pros and cons. **TanhRelu Hybrid Activation (TraHA)** seamlessly merges the virtues of both functions and presents itself as a promising candidate, especially for architectures like the GRU.
 
 ## 📐 Mathematical Definition
 
-For an input \( x \) into the activation function, TraHA is defined as:
+For an input $`\( x \)$` into the activation function, TraHA is defined as:
 
-\[ 
-f(x) = \alpha \times \tanh(x) + \beta \times \max(0, x) 
-\]
+$`\[ 
+f(x) = \alpha \times \tanh(x) + \beta \times \max(0, x)
+\]`$
 
 Where:
-- \( \alpha \) and \( \beta \) are scalar hyperparameters.
+-  $`\( \alpha \)`$ and $`\( \beta \)`$ are scalar hyperparameters.
 - \( \tanh \) is the hyperbolic tangent function, bounding outputs within \([-1, 1]\).
 - \( \max(0, x) \) signifies the ReLU component, introducing non-linearity for positive inputs.
 
