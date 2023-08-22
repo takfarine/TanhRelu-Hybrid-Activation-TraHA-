@@ -47,6 +47,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
 get_custom_objects().update({'traha': Activation(traha)})
+
 model = Sequential([
     Dense(128, input_shape=(784,), activation='traha'),
     Dense(10, activation='softmax')
