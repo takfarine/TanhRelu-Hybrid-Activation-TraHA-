@@ -38,3 +38,5 @@ The dials $`\alpha`$ and $`\beta`$ facilitate fine-tuning, striking a balance be
 
 TanhRelu Hybrid Activation (TraHA) offers a refreshing perspective in the realm of neural activations. Blending the strengths of two dominant functions, its application, especially in GRUs, could be a game-changer. While its theoretical pillars are robust, the ultimate validation will be its empirical performance across diverse datasets and tasks.
 
+## Usage with TensorFlow/Keras $`TF`$:
+
