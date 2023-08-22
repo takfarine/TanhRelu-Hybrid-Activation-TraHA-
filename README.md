@@ -38,5 +38,35 @@ The dials $`\alpha`$ and $`\beta`$ facilitate fine-tuning, striking a balance be
 
 TanhRelu Hybrid Activation (TraHA) offers a refreshing perspective in the realm of neural activations. Blending the strengths of two dominant functions, its application, especially in GRUs, could be a game-changer. While its theoretical pillars are robust, the ultimate validation will be its empirical performance across diverse datasets and tasks.
 
-## Usage with TensorFlow/Keras $`TF`$:
+## Usage with TensorFlow/Keras🔥:
+```python
+import tensorflow as tf
+from tensorflow.keras.utils import get_custom_objects
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+get_custom_objects().update({'traha': Activation(traha)})
+model = Sequential([
+    Dense(128, input_shape=(784,), activation='traha'),
+    Dense(10, activation='softmax')
+])
+```
+
+## Usage with PyTorch🔥:
+```python
+import torch
+import torch.nn as nn
+
+class SimpleNN(nn.Module):
+    def __init__(self):
+        super(SimpleNN, self).__init__()
+        self.fc1 = nn.Linear(784, 128)
+        self.traha = TraHA(alpha=1.0, beta=1.0)
+        self.fc2 = nn.Linear(128, 10)
+
+    def forward(self, x):
+        x = self.traha(self.fc1(x))
+        x = nn.Softmax(dim=1)(self.fc2(x))
+        return x
 
